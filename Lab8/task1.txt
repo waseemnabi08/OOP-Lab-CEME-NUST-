@@ -1,0 +1,33 @@
+To solve the problem, you can follow these hints for creating the inheritance hierarchy and implementing the classes:
+
+1. **Define the Base Class `Account`:**
+   - Include data members for customer's name, account number (unique, assigned in order), and a balance of type double.
+   - Create a constructor that initializes the account with a given balance. Validate the initial balance to be greater than or equal to 0.0, and display an error message if invalid.
+   - Implement member functions:
+     - `credit`: Add an amount to the current balance.
+     - `debit`: Withdraw money, ensuring the debit amount does not exceed the account balance. Display an error message if the amount exceeds the balance.
+     - `getBalance`: Return the current balance.
+     - `getAccountNo`: Return the account number.
+
+2. **Create Derived Class `CreditCardAccount`:**
+   - Inherit from the `Account` base class.
+   - Add a data member for the PIN number set by the customer.
+   - Create a constructor that receives an initial balance and a PIN number.
+   - Provide a public member function `resetpin` to reset the PIN.
+
+3. **Create Derived Class `CheckingAccount`:**
+   - Inherit from the `Account` base class.
+   - Add an additional data member for the fee charged per transaction.
+   - Create a constructor that receives an initial balance and a fee amount.
+   - Redefine member functions `credit` and `debit` to subtract the fee from the account balance after a successful transaction. Invoke the base class `Account` version for balance updates.
+   - Charge a fee only if money is actually withdrawn (debit amount does not exceed the account balance).
+
+4. **Write a Program to Test the Classes:**
+   - Create objects of each class (e.g., `Account`, `CreditCardAccount`, and `CheckingAccount`).
+   - Test the member functions of each class, including credit, debit, getBalance, getAccountNo, and resetpin.
+
+5. **Determine Class Member Visibility:**
+   - For each variable in the class hierarchy provided in Appendix A, determine the visibility (private, public, or not visible).
+   - Present your answer in the form of a table, similar to the one in Appendix A, using symbols: `-` for private, `+` for public, and blank for not visible.
+
+Remember to make necessary member functions and data members const and static where required, as mentioned in the note. Implementing these steps will help you design the inheritance hierarchy and classes to meet the specified requirements.
